@@ -11,6 +11,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'joshdick/onedark.vim'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'python/black'
 call plug#end()
 
 source $HOME/.config/nvim/mappings.vim
@@ -22,3 +27,5 @@ source $HOME/.config/nvim/nerd-commenter.vim
 source $HOME/.config/nvim/fzf.vim
 source $HOME/.config/nvim/which-key.vim
 source $HOME/.config/nvim/one-dark.vim
+source $HOME/.config/nvim/nerd-tree.vim
+

@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Users/adiyoss/Projects/speechbot/demo/speechbot.github.io/egslm'
+let g:netrw_dirhist_5='/Users/adiyoss/Projects/speechbot/demo/speechbot.github.io'
+let g:netrw_dirhist_4='/Users/adiyoss/Projects/speech-utils/vad'
+let g:netrw_dirhist_3='/Users/adiyoss/Projects/speech-utils/input_norm.py'
+let g:netrw_dirhist_2='/Users/adiyoss/Projects/adiyoss.github.io'
+let g:netrw_dirhist_1='/Users/adiyoss/.dotfiles'
+let g:netrw_dirhist_0='/Users/adiyoss/Projects/adiyoss.github.io'
+let g:netrw_dirhist_9='/Users/adiyoss/Projects/source-seperation/bss-unknown-no-spk'
+let g:netrw_dirhist_8='/Users/adiyoss/Projects/source-seperation/bss-unknown-no-spk/models'
+let g:netrw_dirhist_7='/Users/adiyoss/Projects/source-seperation/bss-unknown-no-spk/egs/shdb/data2spk/cv'

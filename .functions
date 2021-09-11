@@ -1,0 +1,61 @@
+# find shorthand
+function f() {
+	find . -name "$1" 2>&1 | grep -v 'Permission denied'
+}
+
+# Determine size of a file or total size of a directory
+function fs() {
+	if du -b /dev/null > /dev/null 2>&1; then
+		local arg=-sbh;
+	else
+		local arg=-sh;
+	fi
+	if [[ -n "$@" ]]; then
+		du $arg -- "$@";
+	else
+		du $arg .[^.]* ./*;
+	fi;
+}
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+# tunnel ssh 1-local port 2-remote host 3-remote port
+function tunnel() {
+    echo Tunneling from localhost:$1 to $3:$2;
+    ssh -N -f -L localhost:"$1":localhost:"$2" "$3"
+}
+
+function sync(){
+    watch -n 2 rsync -avz "$1" "$2"
+}
+
+# always ls after cd
+cd() { builtin cd "$@"; ls;  }
+
+# Extract based upon file ext
+function ex() {
+     if [ -f "$1" ] ; then
+         case "$1" in
+             *.tar.bz2)   tar xvjf "$1"        ;;
+             *.tar.gz)    tar xvzf "$1"     ;;
+             *.bz2)       bunzip2 "$1"       ;;
+             *.rar)       unrar x "$1"     ;;
+             *.gz)        gunzip "$1"     ;;
+             *.tar)       tar xvf "$1"        ;;
+             *.tbz2)      tar xvjf "$1"      ;;
+             *.tgz)       tar xvzf "$1"       ;;
+             *.jar)       jar xf "$1"       ;;
+             *.zip)       unzip "$1"     ;;
+             *.Z)         uncompress "$1"  ;;
+             *.7z)        7z x "$1"    ;;
+             *)           echo "'$1' cannot be extracted via >extract<" ;;
+         esac
+     else
+         echo "'$1' is not a valid file"
+     fi
+}
+
+alias site='cd ~/Workspace/code/academic-kickstart/public && gcap ">" && hugo && cd public && gcap ">"'

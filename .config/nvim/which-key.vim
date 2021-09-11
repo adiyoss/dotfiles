@@ -6,7 +6,7 @@ let g:which_key_map =  {}
 let g:which_key_sep = '→'
 
 " s is for search
-let g:which_key_map['/'] = {
+let g:which_key_map['\'] = {
       \ 'name' : '+search' ,
       \ '/'    : [':History/'  ,'history'],
       \ ';'    : [':Commands'  ,'commands'],

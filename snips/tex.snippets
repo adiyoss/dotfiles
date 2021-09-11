@@ -4,33 +4,6 @@ snippet beg "begin{} / end{}" bA
 \end{$1}
 endsnippet
 
-snippet enum "Enumerate" bA
-\begin{enumerate}
-	\item $0
-\end{enumerate}
-endsnippet
-
-snippet item "Itemize" bA
-\begin{itemize}
-	\item $0
-\end{itemize}
-endsnippet
-
-snippet mi "Math" wA
-$${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
-    snip.rv = ' '
-else:
-    snip.rv = ''
-`$2
-endsnippet
-
-snippet md "Math" wA
-\[
-$1
-.\] $0
-endsnippet
-
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
@@ -41,49 +14,6 @@ endsnippet
 
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0
-endsnippet
-
-snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
-endsnippet
-
-priority 1000
-snippet '^.*\)/' "() Fraction" wrA
-`!p
-stripped = match.string[:-1]
-depth = 0
-i = len(stripped) - 1
-while True:
-	if stripped[i] == ')': depth += 1
-	if stripped[i] == '(': depth -= 1
-	if depth == 0: break;
-	i -= 1
-snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
-`{$1}$0
-endsnippet
-
-priority 10
-snippet "bar" "bar" riA
-\overline{$1}$0
-endsnippet
-
-priority 100
-snippet "([a-zA-Z])bar" "bar" riA
-\overline{`!p snip.rv=match.group(1)`}
-endsnippet
-
-priority 10
-snippet "hat" "hat" riA
-\hat{$1}$0
-endsnippet
-
-priority 100
-snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
-endsnippet
-
-snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
 endsnippet
 
 snippet <= "leq" iA

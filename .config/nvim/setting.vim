@@ -23,6 +23,8 @@ set showtabline=2                       " Always show tabs
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
 set diffopt+=vertical                   " Always diff in vertical mode
+set timeoutlen=300
 
 let g:python3_host_prog='$HOME/anaconda3/envs/nvim_python3/bin/python'
 let g:python_host_prog='$HOME/anaconda3/envs/nvim_python2/bin/python'
+

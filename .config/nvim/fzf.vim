@@ -1,7 +1,6 @@
-map <c-p> :Files<CR>
+map <c-f> :Files<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>bl :BLines<CR>
-nmap <C-_> :BLines<CR>
 
 " This is the default extra key bindings
 let g:fzf_action = {

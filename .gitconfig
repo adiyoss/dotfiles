@@ -1,5 +1,80 @@
+# This is Git's per-user configuration file.
 [user]
+# Please adapt and uncomment the following lines:
 	name = Felix Kreuk
 	email = felixkreuk@gmail.com
-[credential]
-	helper = store
+
+[alias]
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+        # l = log --pretty=oneline -n 20 --graph --abbrev-commit
+        l = log --name-only
+
+	# View the current working tree status using the short format
+	s = status
+
+	# Show the diff between the latest commit and the current state
+	d = difftool
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+  # case for di 1, diff of current state and last revision
+	dd = !"d() { git diff --patch-with-stat HEAD~1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Pull in remote changes for the current repository and all its submodules
+	pl = !"git pull; git submodule foreach git pull origin master"
+	
+	p = push
+
+	ps = !git push origin master
+
+	# Clone a repository including all submodules
+	c = clone --recursive
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+	# Commit all and push
+	# cap = !git add -A && git commit -av && git push origin master
+	cap = !"d() { git add -A && git commit -av -m \"$1\" && git push origin master; }; d"
+
+        last = !git difftool HEAD^ HEAD -y
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[core]
+	excludesfile = ~/.gitignore
+
+# [merge]
+# 	tool = opendiff
+# renameLimit = 0
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = /home/mlspeech/felixk/installations/nvim.appimage -d $REMOTE $LOCAL

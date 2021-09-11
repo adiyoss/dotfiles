@@ -9,15 +9,18 @@ endsnippet
 # print statement
 snippet pp "print()" A
 print(f"$1")
+$0
 endsnippet
 
 # logging
 snippet lgi "logger.info()" A
 logger.info(f"$1")
+$0
 endsnippet
 
 snippet lgd "logger.debug()" A
 logger.debug(f"$1")
+$0
 endsnippet
 
 # insert break point
@@ -34,8 +37,8 @@ else:
 endsnippet
 
 # lambda expression
-snippet lbd "lambda expression" Ai
-lambda ${1}: ${2}
+snippet lbd "lambda expression" A
+lambda ${1:input}: ${2:function}
 endsnippet
 
 # for range
@@ -61,7 +64,6 @@ snippet importtorch "import pytorch modules" bA
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import numpy as np
 $0
 endsnippet
 
@@ -71,22 +73,14 @@ torch.Tensor($1)
 $0
 endsnippet
 
-snippet .uns "unsqueeze" i
-.unsqueeze($1)
-endsnippet
-
-snippet .sq "squeeze" i
-.squeeze($1)
-endsnippet
-
 # create float tensor
-snippet ft "create float tensor"
+snippet ftensor "create float tensor"
 torch.FloatTensor($1)
 $0
 endsnippet
 
 # create sequential
-snippet seq "create sequential"
+snippet tseq "create sequential"
 nn.Sequential(
 	$1,
 	)
