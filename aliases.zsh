@@ -9,7 +9,8 @@ case `uname` in
   ;;
 esac
 
-alias nvim=$HOME/installations/nvim-osx64/bin/nvim
+# alias nvim=$HOME/installations/nvim-osx64/bin/nvim
+alias nvim=$HOME/.local/bin/lvim
 ###############
 #   ALIASES   #
 ###############
@@ -18,7 +19,8 @@ alias vim=nvim
 alias v=nvim
 alias top='htop'
 alias dot='cd ~/.dotfiles'
-alias cp='rsync -ah --progress'
+# alias cp='rsync -ah --progress'
+alias cp='xcp'
 alias g='git'
 alias gcap='git cap'
 alias gs='git s'
@@ -40,29 +42,21 @@ alias tgz='tar -xzvf'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 alias f='open -a Finder ./'
 alias ls='exa'
+alias cat='bat'
 
-# APPS #
-alias subl="open -a /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
-alias praat="open -a /Applications/Praat.app/Contents/MacOS/Praat"
+# # APPS #
+# alias subl="open -a /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
+# alias praat="open -a /Applications/Praat.app/Contents/MacOS/Praat"
 
 # SERVERS #
-# alias planet='ssh adiyoss@planet.cs.biu.ac.il'
-# alias u2='ssh adiyoss@u2.cs.biu.ac.il'
-# alias r2d2='ssh adiyoss@r2d2.lnx.biu.ac.il'
-# alias c3p0='ssh adiyoss@c3po.lnx.biu.ac.il'
-# alias jakku='ssh adiyoss@jakku.lnx.biu.ac.il'
-# alias mustafar='ssh adiyoss@mustafar.lnx.biu.ac.il'
-# alias naboo='ssh adiyoss@naboo.lnx.biu.ac.il'
-# alias tatooine='ssh adiyoss@tatooine.lnx.biu.ac.il'
-# alias yavin='ssh adiyoss@yavin.lnx.biu.ac.il'
-# alias moraband='ssh adiyoss@moraband.lnx.biu.ac.il'
-# alias jabba='ssh adiyoss@jabba.lnx.biu.ac.il'
-# alias yoda='ssh adiyoss@yoda.lnx.biu.ac.il'
-# alias fondor='ssh adiyoss@fondor.lnx.biu.ac.il'
-# alias lobot='ssh adiyoss@lobot.lnx.biu.ac.il'
 alias jh='ssh snc-fairjmp101'
 alias eth2='et adiyoss@devfairH2:8080 --jport 8080 -x -t 8888:8888'
+alias etazure='et adiyoss@azure:8080 --jport 8080 -x -t 8888:8888'
 alias eth1='et adiyoss@devfairH1:8080 --jport 8080 -x -t'
+alias huji='ssh -i ~/.ssh/huji_id adiyoss@phoenix.cs.huji.ac.il'
+alias huji_home='ssh -l adiyoss -J adiyoss@bava.cs.huji.ac.il blakey.cs.huji.ac.il'
+# alias cw_login='cloud_corp cw login'
+alias cw_login='ssh cw'
 #alias devfair='ssh 100.97.17.132'
 
 ###############

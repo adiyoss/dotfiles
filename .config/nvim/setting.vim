@@ -25,6 +25,6 @@ set signcolumn=yes                      " Always show the signcolumn, otherwise 
 set diffopt+=vertical                   " Always diff in vertical mode
 set timeoutlen=300
 
-let g:python3_host_prog='$HOME/anaconda3/envs/nvim_python3/bin/python'
-let g:python_host_prog='$HOME/anaconda3/envs/nvim_python2/bin/python'
+let g:python3_host_prog='$HOME/opt/anaconda3/envs/nvim_python3/bin/python'
+let g:python_host_prog='$HOME/opt/anaconda3/envs/nvim_python2/bin/python'
 

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/adiyoss/Projects/adiyoss.github.cs.huji.ac.il/slprl'
+let g:netrw_dirhist_4='/Users/adiyoss/.config'
 let g:netrw_dirhist_3='/Users/adiyoss/Projects/lucillecrew'
 let g:netrw_dirhist_2='/Users/adiyoss/Projects/adiyoss.github.io/img'
 let g:netrw_dirhist_1='/Users/adiyoss/.config'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_9='/Users/adiyoss/Projects/speech-utils'
 let g:netrw_dirhist_8='/Users/adiyoss/tmp'
 let g:netrw_dirhist_7='/Users/adiyoss/.dotfiles/.ssh'
 let g:netrw_dirhist_6='/Users/adiyoss/Projects/speechbot/demo/speechbot.github.io/egslm'
-let g:netrw_dirhist_5='/Users/adiyoss/Projects/speechbot/demo/speechbot.github.io'
-let g:netrw_dirhist_4='/Users/adiyoss/Projects/speech-utils/vad'
